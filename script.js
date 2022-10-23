@@ -29,12 +29,13 @@ class ImagesFrame extends Rectangle {
 
     render() {
         const element = document.createElement('div');
-        element.innerHTML = `<div class='img'></div>`;
+        element.innerHTML = `<div></div>`;
         element.style.height = this.height + 'px';
         element.style.width = this.width + 'px';
         element.style.borderRadius =  this.borderRadius + 'px';
         element.style.backgroundImage = this.bgImage;
         element.style.backgroundSize = this.bgSize;
+        element.classList.add('img');
         this.parent.append(element);
         return element;
 
@@ -78,11 +79,11 @@ createImgDiv(imgUrlPeople,peopleArr,'.img-container');
 
 
 
-function hideImg(class) { //hide img
+function hideImg(selector) { //hide img
 
-    document.querySelector(`${class}`);
+   
 
-arr.forEach(img=>{
+    document.querySelectorAll(selector).forEach(img=>{
 
     if(img.classList.contains('zoomed')){
         img.style.display = 'block';
@@ -114,22 +115,22 @@ let count = 0;
 document.querySelector('.img-container').addEventListener('click', function(e) {
     const tgt = e.target; console.log(tgt);
     
+        if(tgt.classList.contains('img')){
 
-        tgt.classList.toggle('zoomed');
+            tgt.classList.toggle('zoomed');
     
-        hideImg(portraitsArr);
-        hideImg(peopleArr);
-        
-        count++;
-        if (count>=2){
-            showImg(portraitsArr);
-            showImg(peopleArr);
-            count = 0;
+            hideImg('.img');
+            
+            
+            count++;
+            if (count>=2){
+                showImg(portraitsArr);
+                showImg(peopleArr);
+                count = 0;
+            }
+    
         }
-
-    
-  
-    
+        
 });
 
 

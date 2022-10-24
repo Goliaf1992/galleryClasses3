@@ -6,6 +6,9 @@
 
 /* -------header-------- */
 
+
+/* ----------------nav-bar---------------- */
+
 .nav-container {
 
     width: 100%;
@@ -25,17 +28,47 @@
 }
 
 .nav-container ol a {
-    text-decoration: none;
+    
     padding: 10px;
+    border:1px, solid, black;
+    text-decoration: none;
+    border-bottom: 1px transparent solid;
     
 }
 
-.nav-container ol li:hover {
-    transition: 0.5s;
-    border-bottom: 2px solid black;
+.nav-container ol a:hover {
+    
+    transition: 1s;
+    border-bottom: 1px black solid;
+    
+}
+
+ .main:hover {
+    transition: 1s;
+    background-color: rgba(74, 74, 74, 0.5);
+    
+    
 }
 
 
+
+
+.additional-links  {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.active {
+    
+    display: none;
+}
+
+
+
+
+
+/* ---------------------BIO------------------- */
 
 .info-container {
     margin-top: 10%;
@@ -56,7 +89,7 @@
 /* -------------image-container-------------- */
 
 
-.img-container .img {
+.img-container {
 
     
     display: grid;
@@ -68,15 +101,7 @@
     
 }
 
-.portraits {
- 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 1%;
-    grid-column-gap: 1%;
-    cursor: pointer;
 
-}
 
 
 
@@ -93,30 +118,19 @@
 
 }
 
-.img-container h1 {
+ .header h1 {
     text-align: center;
     margin-top:10%;
     margin-bottom: 10%;
     border-bottom: 1px solid black;
-
-}
-
-.img-container {
-
-}
-
-.people {
-    
-   
-}
-
-.locations {
-    margin-top:10%;
     display: flex;
     justify-content: space-around;
-    border-radius: 50px;
 
 }
+
+
+
+
 
 
 .modal {

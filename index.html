@@ -16,10 +16,16 @@
         <div class="logo-container">Here <br>ll be <br>logo</div>
         <div class="nav-container">
             <ol>
-                <li> <a href="#bio">ОБО МНЕ</a>  </li>
-                <li><a href="#work">РАБОТЫ</a></li>
-                <li><a id="contact" href="">СВЯЗАТЬСЯ СО МНОЙ</a></li>
-
+                <li > <a class="main"  href="#bio">ОБО МНЕ</a>  </li>
+                <li><a class="main" id="nav-element" href="#portfolio">ПОРТФОЛИО</a>
+                <div class="additional-links-wrapper active">
+                    <div  class="additional-links"><a class="main" href="#portfolio">ПОРТРЕТЫ</a>
+                        <a class="main" href="#people-photo">ЛЮДИ</a>
+                    </div>
+                </div>    
+                </li>
+                <li><a class="main" id="contact" href="">СВЯЗАТЬСЯ СО МНОЙ</a></li>
+                
             </ol>
         </div>
         <dialog id="reach-me" class="modal">
@@ -38,6 +44,7 @@
         <div class="info-container">
                     <div class="description">
                         <h1 id="bio">BIO</h1>
+                        
                         I am photographer who likes to make portrait of people and for people! <br>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut quos nisi dignissimos aperiam quia nostrum dicta laborum, ipsa velit ullam esse asperiores delectus magnam quae quam unde beatae illum et. 
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut quos nisi dignissimos aperiam quia nostrum dicta laborum, ipsa velit ullam esse asperiores delectus magnam quae quam unde beatae illum et. 
@@ -46,11 +53,12 @@
     </div>
         </div>
          
-        <div class="img-container" id="work">
-            <div class="header"><h1>ПОРТРЕТЫ</h1></div>
-            </div>
-            <div class="img-container" id="people">
-            </div>
+        
+            <div id="portfolio" class="header"><h1><a href="#people"><i class="fa fa-arrow-down-long"></i></a> ПОРТРЕТЫ <a href="#bio"><i class="fa fa-arrow-up-long"></i></a> </h1></div>
+            <div class="img-container" id="portraits"></div>
+            <div id="people-photo" class="header"><h1>ЛЮДИ</h1></div>
+            <div class="img-container" id="people"></div>
+            
             
             
      

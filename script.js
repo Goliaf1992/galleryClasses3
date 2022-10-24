@@ -1,3 +1,9 @@
+
+
+
+
+
+
 class Rectangle {
     constructor (height,width) {
 
@@ -5,14 +11,12 @@ class Rectangle {
         this.width = width;
         
     }
-
-   
 }
 
-//extends наследует
+//extends 
 class ImagesFrame extends Rectangle {
 
-    constructor(height,width,bgImage,parentSelector,borderRadius) {
+    constructor(height,width,bgImage,parentSelector,borderRadius,...rest) {
 
         super(height,width); //супер всегда идет первой строчкой дублирует ту часть кода которая была здесь у родителя
         
@@ -21,7 +25,6 @@ class ImagesFrame extends Rectangle {
         this.bgSize = 'cover';
         this.parent = document.querySelector(parentSelector);
         this.borderRadius = borderRadius;
-
 
     }
 
@@ -71,9 +74,9 @@ function createImgDiv(arr,arr2,parent) {
     
     }
 
-createImgDiv(imgURL,portraitsArr,'.img-container');
+createImgDiv(imgURL,portraitsArr,'#portraits');
 
-createImgDiv(imgUrlPeople,peopleArr,'.img-container');
+createImgDiv(imgUrlPeople,peopleArr,'#people');
 
 
 
@@ -81,7 +84,7 @@ createImgDiv(imgUrlPeople,peopleArr,'.img-container');
 
 function hideImg(selector) { //hide img
 
-   
+
 
     document.querySelectorAll(selector).forEach(img=>{
 
@@ -96,15 +99,15 @@ function hideImg(selector) { //hide img
 });
 }
 
-function showImg(arr) { //show IMG
+    //show IMG
 
-    arr.forEach(img=>{
-
-        img.style.display = 'block';});
-
-    arr.forEach(img=>{
+function showImg(selector) { 
+    
+    document.querySelectorAll(selector).forEach(img=>{
 
         img.style.display = 'block';});
+
+ 
 }
 
 
@@ -112,7 +115,9 @@ function showImg(arr) { //show IMG
 
 let count = 0;
 
-document.querySelector('.img-container').addEventListener('click', function(e) {
+document.querySelectorAll('.img-container').forEach(element=>{
+    
+    element.addEventListener('click', function(e) {
     const tgt = e.target; console.log(tgt);
     
         if(tgt.classList.contains('img')){
@@ -124,14 +129,14 @@ document.querySelector('.img-container').addEventListener('click', function(e) {
             
             count++;
             if (count>=2){
-                showImg(portraitsArr);
-                showImg(peopleArr);
+                showImg('.img');
+                
                 count = 0;
             }
     
         }
         
-});
+});});
 
 
 
@@ -154,16 +159,21 @@ btnCloseModal.addEventListener('click',()=>{
 
 
 
-// locations js
+// -----------------locations javascript------------------
 
 let imgUrlLocations = ['Haifa1.webp','moscow.jpg'];
 let locationsArr = [];
 
-createImgDiv(imgUrlLocations,locationsArr,'.img-container');
+
+// ------------------nav-bar-work javascript--------------
 
 
 
+const navElementWork = document.querySelector('#nav-element');
 
-
-
-
+navElementWork.addEventListener('click',(event)=>{
+    event.preventDefault();
+    document.querySelector('.additional-links-wrapper').classList.toggle('active');
+    
+    
+});
